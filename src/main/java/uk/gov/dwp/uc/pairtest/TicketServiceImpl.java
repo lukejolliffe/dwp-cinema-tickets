@@ -1,6 +1,7 @@
 package uk.gov.dwp.uc.pairtest;
 
 import thirdparty.paymentgateway.TicketPaymentService;
+import thirdparty.paymentgateway.TicketPaymentServiceImpl;
 import thirdparty.seatbooking.SeatReservationService;
 import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest.Type;
@@ -30,11 +31,16 @@ public class TicketServiceImpl implements TicketService {
         this.bookingValidationService = bookingValidationService;
         this.ticketInformationMap = ticketInformationMap;
     }
+
     /**
      * Should only have private methods other than the one below.
      */
     @Override
     public void purchaseTickets(Long accountId, TicketTypeRequest... ticketTypeRequests) throws InvalidPurchaseException {
+
+        //throws invalid if it fails
+        bookingValidationService.validateBooking(ticketTypeRequests);
+
         int totalPrice = Arrays.stream(ticketTypeRequests).mapToInt(this::ticketRequestToPrice).reduce(0, Integer::sum);
         ticketPaymentService.makePayment(accountId, totalPrice);
 
