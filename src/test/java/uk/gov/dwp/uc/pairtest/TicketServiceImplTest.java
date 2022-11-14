@@ -1,16 +1,20 @@
 package uk.gov.dwp.uc.pairtest;
 
-import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import thirdparty.paymentgateway.TicketPaymentService;
+import thirdparty.paymentgateway.TicketPaymentServiceImpl;
 import thirdparty.seatbooking.SeatReservationService;
+import thirdparty.seatbooking.SeatReservationServiceImpl;
 import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest.Type;
 import uk.gov.dwp.uc.pairtest.ticket.Ticket;
 import uk.gov.dwp.uc.pairtest.ticket.TicketImpl;
 import uk.gov.dwp.uc.pairtest.validation.BookingValidationService;
+import uk.gov.dwp.uc.pairtest.validation.BookingValidationServiceImpl;
+import uk.gov.dwp.uc.pairtest.validation.rules.MaxTicketsRule;
+import uk.gov.dwp.uc.pairtest.validation.rules.MinimumAdultsRule;
+import uk.gov.dwp.uc.pairtest.validation.rules.MinimumTicketsRule;
 
 import java.util.EnumMap;
 import java.util.Map;
