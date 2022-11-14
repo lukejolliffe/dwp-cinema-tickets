@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 public class BookingValidationServiceImpl implements BookingValidationService {
 
-    private BookingValidationRule[] rules;
+    private final BookingValidationRule[] rules;
     public BookingValidationServiceImpl(BookingValidationRule ... rules){
         this.rules = rules;
     }

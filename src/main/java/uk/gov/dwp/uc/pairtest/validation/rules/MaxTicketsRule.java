@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class MaxTicketsRule implements BookingValidationRule {
 
-    private int maxTickets;
+    private final int maxTickets;
 
     public MaxTicketsRule(int maxTickets) {
         this.maxTickets = maxTickets;

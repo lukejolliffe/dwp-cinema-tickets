@@ -4,5 +4,5 @@ import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 
 public interface BookingValidationRule {
 
-    public boolean validate(TicketTypeRequest ... requests);
+    boolean validate(TicketTypeRequest ... requests);
 }
