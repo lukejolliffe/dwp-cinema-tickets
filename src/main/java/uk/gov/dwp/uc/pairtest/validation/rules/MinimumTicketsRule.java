@@ -4,6 +4,9 @@ import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 
 import java.util.Arrays;
 
+/**
+ * Rule to set the minimum amount of tickets allowed to be requested
+ */
 public class MinimumTicketsRule implements BookingValidationRule {
 
     private final int minTickets;

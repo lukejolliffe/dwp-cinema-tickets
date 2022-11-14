@@ -4,11 +4,14 @@ import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 
 import java.util.Arrays;
 
-public class MaxTicketsRule implements BookingValidationRule {
+/**
+ * Rule to set the maximum amount of tickets to be allowed
+ */
+public class MaximumTicketsRule implements BookingValidationRule {
 
     private final int maxTickets;
 
-    public MaxTicketsRule(int maxTickets) {
+    public MaximumTicketsRule(int maxTickets) {
         this.maxTickets = maxTickets;
     }
     @Override

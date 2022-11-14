@@ -1,6 +1,5 @@
 package uk.gov.dwp.uc.pairtest;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,7 +13,7 @@ import uk.gov.dwp.uc.pairtest.ticket.Ticket;
 import uk.gov.dwp.uc.pairtest.ticket.TicketImpl;
 import uk.gov.dwp.uc.pairtest.validation.BookingValidationService;
 import uk.gov.dwp.uc.pairtest.validation.BookingValidationServiceImpl;
-import uk.gov.dwp.uc.pairtest.validation.rules.MaxTicketsRule;
+import uk.gov.dwp.uc.pairtest.validation.rules.MaximumTicketsRule;
 import uk.gov.dwp.uc.pairtest.validation.rules.MinimumAdultsRule;
 import uk.gov.dwp.uc.pairtest.validation.rules.MinimumTicketsRule;
 
@@ -65,7 +64,7 @@ public class TicketServiceIntegrationTest {
         this.ticketPaymentService = Mockito.mock(TicketPaymentService.class);
         this.seatReservationService = Mockito.mock(SeatReservationService.class);
         BookingValidationService bookingValidationService = new BookingValidationServiceImpl(
-                new MaxTicketsRule(20),
+                new MaximumTicketsRule(20),
                 new MinimumAdultsRule(),
                 new MinimumTicketsRule(0)
         );

@@ -9,7 +9,7 @@ public class MaxTicketsRuleTest {
 
     @Test
     public void testMaxTicketsFails() {
-        MaxTicketsRule sut = new MaxTicketsRule(20);
+        MaximumTicketsRule sut = new MaximumTicketsRule(20);
 
         //all tickets in one request 21 is boundary maximum
         boolean result = sut.validate(
@@ -28,7 +28,7 @@ public class MaxTicketsRuleTest {
 
     @Test
     public void testLimitMinusOnePasses() {
-        MaxTicketsRule sut = new MaxTicketsRule(20);
+        MaximumTicketsRule sut = new MaximumTicketsRule(20);
 
         //test just below maximum
         boolean result = sut.validate(

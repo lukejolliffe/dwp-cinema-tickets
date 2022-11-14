@@ -4,6 +4,9 @@ import uk.gov.dwp.uc.pairtest.domain.TicketTypeRequest;
 
 import java.util.Arrays;
 
+/**
+ * Rule class to specify the minimum adults allowed is 1
+ */
 public class MinimumAdultsRule implements BookingValidationRule {
 
     @Override

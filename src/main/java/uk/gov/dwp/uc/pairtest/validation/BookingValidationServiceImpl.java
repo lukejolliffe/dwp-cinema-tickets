@@ -14,6 +14,11 @@ public class BookingValidationServiceImpl implements BookingValidationService {
     public BookingValidationServiceImpl(BookingValidationRule ... rules){
         this.rules = rules;
     }
+
+    /**
+     * {@inheritDoc}
+     * @implNote checks are not lazy and will all be processed before throwing
+     */
     @Override
     public boolean validateBooking(TicketTypeRequest ... requests) throws InvalidPurchaseException {
         List<BookingValidationRule> failedChecks = Arrays.stream(rules).filter(bookingValidationRule -> !bookingValidationRule.validate(requests)).collect(Collectors.toList());

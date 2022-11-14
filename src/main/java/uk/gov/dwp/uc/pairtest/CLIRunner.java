@@ -9,7 +9,7 @@ import uk.gov.dwp.uc.pairtest.ticket.Ticket;
 import uk.gov.dwp.uc.pairtest.ticket.TicketImpl;
 import uk.gov.dwp.uc.pairtest.validation.BookingValidationService;
 import uk.gov.dwp.uc.pairtest.validation.BookingValidationServiceImpl;
-import uk.gov.dwp.uc.pairtest.validation.rules.MaxTicketsRule;
+import uk.gov.dwp.uc.pairtest.validation.rules.MaximumTicketsRule;
 import uk.gov.dwp.uc.pairtest.validation.rules.MinimumAdultsRule;
 import uk.gov.dwp.uc.pairtest.validation.rules.MinimumTicketsRule;
 
@@ -31,7 +31,7 @@ public class CLIRunner {
         TicketPaymentService ticketPaymentService = new TicketPaymentServiceImpl();
         SeatReservationService seatReservationService = new SeatReservationServiceImpl();
         BookingValidationService bookingValidationService = new BookingValidationServiceImpl(
-                new MaxTicketsRule(20),
+                new MaximumTicketsRule(20),
                 new MinimumAdultsRule(),
                 new MinimumTicketsRule(0)
         );
